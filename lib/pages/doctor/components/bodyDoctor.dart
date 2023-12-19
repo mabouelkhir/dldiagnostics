@@ -1,28 +1,14 @@
 import 'dart:convert';
 import 'dart:math';
-import 'dart:typed_data';
-
 import 'package:flutter/material.dart';
 import 'package:health_app/helpers/constant.dart';
 import 'package:health_app/models/AppointmentModel.dart';
-import 'package:health_app/models/data.dart';
-import 'package:health_app/models/doctor_model.dart';
 import 'package:health_app/pages/doctor/appointmentDetailsPage.dart';
-import 'package:health_app/pages/doctor/doctorHomePage.dart';
-import 'package:health_app/pages/doctor/drawerDoctorScreen.dart';
-import 'package:health_app/pages/login_page.dart';
-import 'package:health_app/pages/patient/PatientHomePage.dart';
 import 'package:health_app/pages/patient/components/header_with_searchBox.dart';
-import 'package:health_app/pages/patient/components/recommendation.dart';
-import 'package:health_app/pages/patient/doctorDetails.dart';
-import 'package:health_app/pages/patient/patientContent.dart';
 
 import 'package:health_app/services/api_service.dart';
 import 'package:health_app/theme/extention.dart';
 import 'package:intl/intl.dart';
-import 'package:time_machine/time_machine.dart' as timeMachine;
-
-import '../../../services/search_query.dart';
 
 //class Body extends StatelessWidget {
 class BodyDoctor extends StatefulWidget {

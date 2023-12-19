@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 class Constants {
   Constants._();
-  static const BASE_URL = 'http://192.168.1.5:8080/api';
+  static const BASE_URL = 'http://192.168.0.134:8080/api';
 
   // Colors that we use in our app
   static const kPrimaryColor = Color(0xFF0C9869);

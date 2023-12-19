@@ -4,7 +4,7 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:http/http.dart' as http;
 class Authentification {
   static var response;
-  static const API_IP = 'http://192.168.1.5:8080/api';
+  static const API_IP = 'http://192.168.0.134:8080/api';
   //final storage = FlutterSecureStorage();
   static var storageJwt=FlutterSecureStorage();
   static var jwtAuthen;

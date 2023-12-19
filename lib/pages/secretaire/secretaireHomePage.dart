@@ -1,18 +1,7 @@
-import 'dart:async';
 import 'dart:convert';
-import 'dart:ffi';
-import 'dart:typed_data';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_easyloading/flutter_easyloading.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
-import 'package:health_app/pages/login_page.dart';
 import 'package:health_app/pages/patient/components/MenuSecretaireWidgets.dart';
-import 'package:health_app/pages/patient/components/MenuWidgets.dart';
-import 'package:health_app/pages/patient/components/body.dart';
-import 'package:get/get.dart';
 import 'package:health_app/pages/secretaire/components/bodySecretaire.dart';
 import 'package:health_app/services/api_service.dart';
 
@@ -25,9 +14,42 @@ class SecretaireHomePageState extends State<SecretaireHomePage> {
   Image? image;
   bool? _loadingInProgress;
   ApiService apiService= ApiService();
+  static var userData;
+  static String? ImageOfUser;
+  static var idDoctor;
+
   @override
   void initState() {
     super.initState();
+
+    super.initState();
+    WidgetsBinding.instance!.addPostFrameCallback((_) async {
+      getActualUser().then((userData) {
+        var doctor = SecretaireM.fromJson(userData['medecin']);
+        setState(() {
+          DrawerDoctorScreenState.idDoctor = doctor.id;
+        });
+        DrawerDoctorScreenState.idDoctor = doctor.id;
+        //storeUser();
+
+        setState(() {
+          LoginPageState.username;
+          LoginPageState.firstName=doctor.nom;
+          LoginPageState.lastName=doctor.prenom;
+
+          DoctorHomePageState.idDoctor=doctor.id;
+          print("ttttttt");
+          print(doctor.id);
+          print(DoctorHomePageState.idDoctor);
+        });
+      });
+    });
+  }
+  Future getActualUser() async {
+    var res = await apiService.getMyProfile();
+    userData = json.decode(res.body);
+
+    return userData;
   }
 
   void displayImage() async {

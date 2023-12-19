@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:health_app/helpers/constant.dart';
-import 'package:health_app/pages/login_page.dart';
 import 'package:http/http.dart';
 
 class AuthService {

@@ -53,8 +53,6 @@ class AppointmentDetailsPageState extends State<AppointmentDetailsPage> {
     setState(() {
       checkPermissions();
       print("initial onclikced");
-      //onClicked= (source)=>pickImage(source);
-      // this.image!.path!="/storage/emulated/0/Download/man-388104_640.jpg";
     });
   }
   Future<void> _fetchMaladies() async {
@@ -381,7 +379,7 @@ class AppointmentDetailsPageState extends State<AppointmentDetailsPage> {
                                   _resultDiagnostic==null?"...":_resultDiagnostic,
                                   style: GoogleFonts.openSans(
                                     color: Colors.red,
-                                    fontSize: 30
+                                    fontSize: 25
                                   ),
                                 ),
                               ),

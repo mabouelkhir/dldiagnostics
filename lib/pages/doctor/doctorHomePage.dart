@@ -26,7 +26,6 @@ class DoctorHomePageState extends State<DoctorHomePage> {
   void initState() {
     super.initState();
      WidgetsBinding.instance!.addPostFrameCallback((_) async {
-      //await this.getWeatherData();
       getActualUser().then((userData) {
         var doctor = DoctorModel.fromJson(userData['medecin']);
         setState(() {

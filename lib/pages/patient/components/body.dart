@@ -1,21 +1,15 @@
 import 'dart:convert';
 import 'dart:math';
-import 'dart:typed_data';
-
 import 'package:flutter/material.dart';
 import 'package:health_app/helpers/constant.dart';
-import 'package:health_app/models/data.dart';
 import 'package:health_app/models/doctor_model.dart';
-import 'package:health_app/pages/patient/PatientHomePage.dart';
 import 'package:health_app/pages/patient/components/header_with_searchBox.dart';
 import 'package:health_app/pages/patient/components/recommendation.dart';
 import 'package:health_app/pages/patient/doctorDetails.dart';
-import 'package:health_app/pages/patient/patientContent.dart';
 import 'package:health_app/services/api_service.dart';
 import 'package:health_app/theme/extention.dart';
 import 'package:health_app/services/search_query.dart';
 
-import 'title_with_more_bbtn.dart';
 
 class Body extends StatefulWidget {
   @override
@@ -23,7 +17,6 @@ class Body extends StatefulWidget {
 }
 
 class _BodyState extends State<Body> {
-  TextEditingController _searchController = TextEditingController();
   List<DoctorModel>? doctorDataList;
   Image? image;
   ApiService apiService = new ApiService();
